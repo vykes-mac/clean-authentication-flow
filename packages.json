@@ -1,0 +1,71 @@
+{
+  "name": "clean-authentication-flow",
+  "version": "1.0.0",
+  "description": "architectural approach to creating a sign in flow",
+  "main": "dist/index.js",
+  "scripts": {
+    "clean": "rimraf dist/*",
+    "lint": "tslint -c tslint.json -p tsconfig.json --fix",
+    "tsc": "tsc",
+    "build": "npm-run-all clean lint tsc",
+    "dev:start": "npm-run-all build start",
+    "dev": "nodemon --watch src -e ts,ejs --exec npm run dev:start",
+    "start": "node .",
+    "test": "nyc --clean --all --require ts-node/register --require tsconfig-paths/register --require reflect-metadata/Reflect --extension .ts -- mocha --exit --timeout 5000",
+    "test:all": "npm test __tests__/**/*.spec.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+  },
+  "dependencies": {
+    "@types/express-promise-router": "^2.0.1",
+    "@types/joi": "^14.3.2",
+    "@types/jsonwebtoken": "^8.3.2",
+    "@types/webpack-env": "^1.13.9",
+    "body-parser": "^1.18.3",
+    "dotenv": "^7.0.0",
+    "express": "^4.16.4",
+    "express-promise-router": "^3.0.3",
+    "inversify": "^5.0.1",
+    "inversify-express-utils": "^6.3.2",
+    "joi": "^14.3.1",
+    "jsonwebtoken": "^8.5.1",
+    "module-alias": "^2.2.0",
+    "reflect-metadata": "^0.1.13"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.1.7",
+    "@types/chai-http": "^4.2.0",
+    "@types/dotenv": "^6.1.1",
+    "@types/express": "^4.16.1",
+    "@types/faker": "^4.1.5",
+    "@types/mocha": "^5.2.6",
+    "@types/node": "^11.12.2",
+    "@types/sinon-chai": "^3.2.2",
+    "chai": "^4.2.0",
+    "chai-http": "^4.2.1",
+    "faker": "^4.1.0",
+    "mocha": "^6.0.2",
+    "nodemon": "^1.18.10",
+    "npm-run-all": "^4.1.5",
+    "nyc": "^13.3.0",
+    "rimraf": "^2.6.3",
+    "sinon": "^7.3.1",
+    "sinon-chai": "^3.3.0",
+    "ts-mocha": "^6.0.0",
+    "ts-node": "^8.0.3",
+    "tsconfig-paths": "^3.8.0",
+    "tslint": "^5.14.0",
+    "typescript": "^3.4.1"
+  },
+  "_moduleAliases": {
+    "@pbb": "dist"
+  },
+  "nyc": {
+    "exclude": [
+      "__tests__/**/*.spec.ts",
+      "dist/**"
+    ]
+  }
+}
