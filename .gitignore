@@ -1,0 +1,11 @@
+#node modules
+node_modules/
+dist/
+.nyc_output/
+.vscode/
+coverage
+
+.package-lock.json
+
+# environment variables
+.env
