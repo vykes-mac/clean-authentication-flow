@@ -16,8 +16,7 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
-  },
+  "license": "ISC",
   "dependencies": {
     "@types/express-promise-router": "^2.0.1",
     "@types/joi": "^14.3.2",
